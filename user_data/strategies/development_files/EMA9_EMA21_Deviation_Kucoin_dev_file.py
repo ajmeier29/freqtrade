@@ -14,7 +14,7 @@ config = Configuration.from_files(["./configs/kucoin/kucoin-btc-eth-config.json"
 # Define some constants
 config["timeframe"] = "5m"
 # Name of the strategy class
-config["strategy"] = "EMA_Crossover_with_RSI"
+config["strategy"] = "EMA9_EMA21_Deviation"
 # Location of the data
 data_location = Path(config['user_data_dir'], 'data', 'kucoin')
 # Pair to analyze - Only use one pair here

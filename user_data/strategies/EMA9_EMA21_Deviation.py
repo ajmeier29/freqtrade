@@ -16,7 +16,7 @@ import pandas_ta as pta
 import freqtrade.vendor.qtpylib.indicators as qtpylib
 
 
-class EMA_Crossover_with_RSI(IStrategy):
+class EMA9_EMA21_Deviation(IStrategy):
     """
     This is a strategy template to get you started.
     More information in https://www.freqtrade.io/en/latest/strategy-customization/
@@ -42,15 +42,18 @@ class EMA_Crossover_with_RSI(IStrategy):
     # Minimal ROI designed for the strategy.
     # This attribute will be overridden if the config file contains "minimal_roi".
     minimal_roi = {
-        "0": 0.1,
+        "0": 0.12,
     }
     # Optimal timeframe for the strategy.
-    timeframe = '5m'
+    timeframe = '1h'
 
     # Optimal stoploss designed for the strategy.
     # This attribute will be overridden if the config file contains "stoploss".
-    stoploss = -0.05
+    stoploss = -0.03
 
+    # EMA9 Devation from EMA 21
+    ema9_deviation_from_ema21_below = 1.3
+    # ema9_deviation_from_ema21_above = -0.85
     # -------------------------------------
 
     # Trailing stoploss
@@ -354,10 +357,15 @@ class EMA_Crossover_with_RSI(IStrategy):
         :param metadata: Additional information, like the currently traded pair
         :return: DataFrame with buy column
         """
+        # ema9 = dataframe['ema_9'].iloc[23]
+        # ema21 = dataframe['ema_21'].iloc[23]
+        # test = 1-(ema9 / ema21)
+        # testfinal = test * 100
+        # test = dataframe.iloc[23][(1-(dataframe['ema_9'].iloc[23] / dataframe['ema_21'].iloc[23])) * 100]
         dataframe.loc[
             (
-                (qtpylib.crossed_above(dataframe['rsi'], self.buy_rsi)) &  # Signal: RSI crosses above buy_rsi, default is 60
-                (qtpylib.crossed_above(dataframe['ema_9'], dataframe['ema_21']))
+                #(qtpylib.crossed_above(dataframe['rsi'], self.buy_rsi)) &  # Signal: RSI crosses above buy_rsi, default is 60
+                (((1-(dataframe['ema_9'] / dataframe['ema_21'])) * 100) > self.ema9_deviation_from_ema21_below)
                 # (dataframe['tema'] <= dataframe['bb_middleband']) &  # Guard: tema below BB middle
                 # (dataframe['tema'] > dataframe['tema'].shift(1)) &  # Guard: tema is raising
                 # (dataframe['volume'] > 0)  # Make sure Volume is not 0
@@ -384,8 +392,9 @@ class EMA_Crossover_with_RSI(IStrategy):
         """
         dataframe.loc[
             (
-                (qtpylib.crossed_below(dataframe['rsi'], self.sell_rsi)) &
+                # (qtpylib.crossed_below(dataframe['rsi'], self.sell_rsi)) &
                 (qtpylib.crossed_below(dataframe['ema_9'], dataframe['ema_21']))
+                # (((1-(dataframe['ema_9'] / dataframe['ema_21'])) * 100) < self.ema9_deviation_from_ema21_above)
             ), 
         'sell'] = 1
         # dataframe.loc[
