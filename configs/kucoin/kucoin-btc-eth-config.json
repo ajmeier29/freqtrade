@@ -12,8 +12,8 @@
     //     "0": 0.1
     // },
     "order_types": {
-        "buy": "limit",
-        "sell": "limit",
+        "buy": "market",
+        "sell": "market",
         "stoploss": "market",
         "stoploss_on_exchange": false,
         "stoploss_on_exchange_interval": 60
@@ -25,7 +25,7 @@
         "unit": "minutes"
     },
     "bid_strategy": {
-        "price_side": "bid",
+        "price_side": "ask",
         "ask_last_balance": 0.0,
         "use_order_book": true,
         "order_book_top": 1,
