@@ -108,16 +108,38 @@ class NostalgiaForInfinityNextGen(IStrategy):
 
     # ROI table:
     minimal_roi = {
-        "0": 100.0,
+        "0": 0.334,
+        "58": 0.065,
+        "162": 0.03,
+        "444": 0
     }
 
-    stoploss = -0.50
+    # Stoploss:
+    stoploss = -0.187
 
-    # Trailing stoploss (not used)
-    trailing_stop = False
-    trailing_only_offset_is_reached = True
-    trailing_stop_positive = 0.01
-    trailing_stop_positive_offset = 0.03
+    # Trailing stop:
+    trailing_stop = True
+    trailing_stop_positive = 0.05
+    trailing_stop_positive_offset = 0.137
+    trailing_only_offset_is_reached = False
+    
+
+
+    # ______________ Original Settings ______________
+    # # ROI table:
+    # minimal_roi = {
+    #     "0": 100.0,
+    # }
+
+    # stoploss = -0.50
+
+    # # Trailing stoploss (not used)
+    # trailing_stop = False
+    # trailing_only_offset_is_reached = True
+    # trailing_stop_positive = 0.01
+    # trailing_stop_positive_offset = 0.03
+
+    # _______________________________________________
 
     use_custom_stoploss = False
 
