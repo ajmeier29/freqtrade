@@ -1,0 +1,25 @@
+{
+  "strategy_name": "EMA_Crossover_with_RSI",
+  "params": {
+    "buy": {},
+    "sell": {},
+    "protection": {},
+    "roi": {
+      "0": 0.20700000000000002,
+      "34": 0.08900000000000001,
+      "88": 0.019,
+      "179": 0
+    },
+    "stoploss": {
+      "stoploss": -0.187
+    },
+    "trailing": {
+      "trailing_stop": true,
+      "trailing_stop_positive": 0.025,
+      "trailing_stop_positive_offset": 0.048,
+      "trailing_only_offset_is_reached": true
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2022-03-29 19:38:56.067554+00:00"
+}

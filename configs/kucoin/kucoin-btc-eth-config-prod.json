@@ -7,10 +7,6 @@
     "fiat_display_currency": "USD",
     "dry_run": false,
     "cancel_open_orders_on_exit": false,
-    "fee": 0.001,
-    // "minimal_roi": {
-    //     "0": 0.1
-    // },
     "order_types": {
         "buy": "market",
         "sell": "market",
