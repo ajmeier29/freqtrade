@@ -50,6 +50,7 @@ class EMA_Crossover_with_RSI_Optimized(IStrategy):
     # Optimal timeframe for the strategy.
     timeframe = '5m'
 
+
     # Optimal stoploss designed for the strategy.
     # This attribute will be overridden if the config file contains "stoploss".
     stoploss = -0.187
