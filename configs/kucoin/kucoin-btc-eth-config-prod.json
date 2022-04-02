@@ -36,10 +36,6 @@
         "order_book_top": 1
     },
     "exchange": {
-        "name": "kucoin",
-        "key": "623b609d029fc100015280f0",
-        "secret": "749fc4fc-c827-436e-b9e4-5dc02e5143b3",
-        "password": "Andy81**",
         "ccxt_config": {},
         "ccxt_async_config": {
             "enableRateLimit": true,
