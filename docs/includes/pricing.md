@@ -56,9 +56,15 @@ When entering a trade with the orderbook enabled (`entry_pricing.use_order_book=
 
 #### Entry price without Orderbook enabled
 
+<<<<<<< HEAD
 The following section uses `side` as the configured `entry_pricing.price_side` (defaults to `"same"`).
 
 When not using orderbook (`entry_pricing.use_order_book=False`), Freqtrade uses the best `side` price from the ticker if it's below the `last` traded price from the ticker. Otherwise (when the `side` price is above the `last` price), it calculates a rate between `side` and `last` price based on `entry_pricing.price_last_balance`.
+=======
+The following section uses `side` as the configured `bid_strategy.price_side`.
+
+When not using orderbook (`bid_strategy.use_order_book=False`), Freqtrade uses the best `side` price from the ticker if it's below the `last` traded price from the ticker. Otherwise (when the `side` price is above the `last` price), it calculates a rate between `side` and `last` price.
+>>>>>>> strat-develop
 
 The `entry_pricing.price_last_balance` configuration parameter controls this. A value of `0.0` will use `side` price, while `1.0` will use the `last` price and values between those interpolate between ask and last price.
 
@@ -116,9 +122,15 @@ When exiting with the orderbook enabled (`exit_pricing.use_order_book=True`), Fr
 
 #### Exit price without Orderbook enabled
 
+<<<<<<< HEAD
 The following section uses `side` as the configured `exit_pricing.price_side` (defaults to `"ask"`).
 
 When not using orderbook (`exit_pricing.use_order_book=False`), Freqtrade uses the best `side` price from the ticker if it's above the `last` traded price from the ticker. Otherwise (when the `side` price is below the `last` price), it calculates a rate between `side` and `last` price based on `exit_pricing.price_last_balance`.
+=======
+When not using orderbook (`ask_strategy.use_order_book=False`), the price at the `ask_strategy.price_side` side (defaults to `"ask"`) from the ticker will be used as the sell price.
+
+When not using orderbook (`ask_strategy.use_order_book=False`), Freqtrade uses the best `side` price from the ticker if it's below the `last` traded price from the ticker. Otherwise (when the `side` price is above the `last` price), it calculates a rate between `side` and `last` price.
+>>>>>>> strat-develop
 
 The `exit_pricing.price_last_balance` configuration parameter controls this. A value of `0.0` will use `side` price, while `1.0` will use the last price and values between those interpolate between `side` and last price.
 
