@@ -40,23 +40,22 @@
         "order_book_top": 1
     },
     "exchange": {
-        // "ccxt_config": {},
         "ccxt_config": {
-            "enableRateLimit": true,
-            "rateLimit": 100,
-            "timeout": 60000,
-            "urls": {
-                "api": {
-                    "public": "http://exchange-proxy:8080/kucoin",
-                    "private": "http://exchange-proxy:8080/kucoin"
-                }
-            },
-        "ccxt_async_config": {
-            "enableRateLimit": true,
-            "rateLimit": 1500
+          "enableRateLimit": true,
+          "rateLimit": 100,
+          "timeout": 60000,
+          "urls": {
+              "api": {
+                  "public": "http://exchange-proxy:8080/kucoin",
+                  "private": "http://exchange-proxy:8080/kucoin"
+              }
+          }
         },
-        // "pair_whitelist": ["BTC/USDT", "ETH/USDT", "LUNA/USDT", "APE/USDT", "ADA/USDT", "XRP/USDT", "AVAX/USDT", "SOL/USDT", "LRC/USDT", "DOT/USDT", "ETC/USDT", "NEAR/USDT", "SHIB/USDT", "SLP/USDT", "FTM/USDT", "RUNE/USDT", "ATOM/USDT", "KDA/USDT", "BNB/USDT"
-        // ],
+        "ccxt_async_config": {
+                "enableRateLimit": true,
+                "rateLimit": 100,
+                "timeout": 60000
+        },
         "pair_whitelist": [
             "2CRZ/USDT",
             "AAVE/USDT",
