@@ -186,7 +186,7 @@ class NASOSv4(IStrategy):
 
         # if current_profit < 0.001 and current_time - timedelta(minutes=600) > trade.open_date_utc:
         #     return -0.005
-
+ 
         return stoploss_from_open(sl_profit, current_profit)
 
     def confirm_trade_exit(self, pair: str, trade: Trade, order_type: str, amount: float,
