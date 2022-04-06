@@ -55,6 +55,8 @@
             "enableRateLimit": true,
             "rateLimit": 1500
         },
+        // "pair_whitelist": ["BTC/USDT", "ETH/USDT", "LUNA/USDT", "APE/USDT", "ADA/USDT", "XRP/USDT", "AVAX/USDT", "SOL/USDT", "LRC/USDT", "DOT/USDT", "ETC/USDT", "NEAR/USDT", "SHIB/USDT", "SLP/USDT", "FTM/USDT", "RUNE/USDT", "ATOM/USDT", "KDA/USDT", "BNB/USDT"
+        // ],
         "pair_whitelist": [
             "2CRZ/USDT",
             "AAVE/USDT",
