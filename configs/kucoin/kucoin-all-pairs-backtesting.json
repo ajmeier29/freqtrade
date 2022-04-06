@@ -40,7 +40,17 @@
         "order_book_top": 1
     },
     "exchange": {
-        "ccxt_config": {},
+        // "ccxt_config": {},
+        "ccxt_config": {
+            "enableRateLimit": true,
+            "rateLimit": 100,
+            "timeout": 60000,
+            "urls": {
+                "api": {
+                    "public": "http://exchange-proxy:8080/kucoin",
+                    "private": "http://exchange-proxy:8080/kucoin"
+                }
+            },
         "ccxt_async_config": {
             "enableRateLimit": true,
             "rateLimit": 1500
